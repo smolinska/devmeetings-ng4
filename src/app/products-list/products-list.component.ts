@@ -7,26 +7,17 @@ import {Product} from "../models";
   styleUrls: ['./products-list.component.scss']
 })
 export class ProductsListComponent implements OnInit {
-  filteredProducts: Product[];
+  inputValue = '';
   @Input() products: Product[];
   sortAsc = false;
-
-
 
   constructor() {
   }
 
   ngOnInit() {
-    this.filteredProducts = this.products;
     this.sortByPriceLH();
   }
 
-  filter(value) {
-    this.filteredProducts = this.products.filter(p =>
-      Object.keys(p)
-        .filter(k => !Product.excluded.includes(k))
-        .some(k => p[k].toString().toLowerCase().includes(value.toLowerCase())));
-  }
 
   toggleSort() {
     if (this.sortAsc) {
@@ -38,10 +29,11 @@ export class ProductsListComponent implements OnInit {
   }
 
   sortByPriceLH() {
-    this.filteredProducts.sort((p1, p2) => p1.price - p2.price);
+    this.products.sort((p1, p2) => p1.price - p2.price);
   }
+
   sortByPriceHL() {
-    this.filteredProducts.sort((p1, p2) => p2.price - p1.price);
+    this.products.sort((p1, p2) => p2.price - p1.price);
   }
 
 }

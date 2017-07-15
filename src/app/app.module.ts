@@ -8,6 +8,7 @@ import { PromotedProductsComponent } from './promoted-products/promoted-products
 import { ProductsListComponent } from './products-list/products-list.component';
 import { PromotedProductsListComponent } from './promoted-products-list/promoted-products-list.component';
 import { FilterPipe } from './filter.pipe';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FilterPipe } from './filter.pipe';
     FilterPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
