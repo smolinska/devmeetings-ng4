@@ -1,0 +1,19 @@
+<div class="row search-row products-row">
+  <div class="col-md-2 search-col">
+    Search: <input type="text" (keyup)="filter($event.target.value)">
+  </div>
+</div>
+
+<div class="row products-row sort-row">
+  <div class="col-md-12 sort">
+    Sort by:
+    <button class="btn" (click)="toggleSort()">Price
+      <i class="fa fa-angle-up" aria-hidden="true" [hidden]="sortAsc"></i>
+      <i class="fa fa-angle-down" aria-hidden="true" [hidden]="!sortAsc"></i>
+    </button>
+  </div>
+</div>
+
+<div class="row products-row">
+  <app-product class="col-md-3" *ngFor="let product of filteredProducts" [product]="product"></app-product>
+</div>
