@@ -7,8 +7,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PromotedProductsComponent } from './promoted-products/promoted-products.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { PromotedProductsListComponent } from './promoted-products-list/promoted-products-list.component';
-import { FilterPipe } from './filter.pipe';
+// import { FilterPipe } from './filter.pipe';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {ProductsService} from "./products.service";
+import { OrderFormComponent } from './order-form/order-form.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,14 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     PromotedProductsComponent,
     ProductsListComponent,
     PromotedProductsListComponent,
-    FilterPipe
+    OrderFormComponent,
+    // FilterPipe
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

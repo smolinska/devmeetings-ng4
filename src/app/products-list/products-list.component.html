@@ -15,5 +15,5 @@
 </div>
 
 <div class="row products-row">
-  <app-product class="col-md-3" *ngFor="let product of products | filter:inputValue" [product]="product"></app-product>
+  <app-product class="col-md-3" *ngFor="let product of filter(inputValue)" [product]="product"></app-product>
 </div>

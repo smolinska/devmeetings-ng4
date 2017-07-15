@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <form>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Name">
+      </div>
+      <div class="form-group">
+        <label for="surname">Surname</label>
+        <input type="text" class="form-control" id="surname" placeholder="Surname">
+      </div>
+      <div class="form-group">
+        <label for="adress">Adress</label>
+        <input type="text" class="form-control" id="adress" placeholder="Adress">
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" placeholder="City">
+      </div>
+
+      <div class="form-check">
+        <label class="form-check-label" *ngFor="let product of products">
+          <input type="checkbox" class="form-check-input">
+          {{product.name}}
+        </label>
+      </div>
+
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
